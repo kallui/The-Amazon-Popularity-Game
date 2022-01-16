@@ -1,0 +1,90 @@
+:root {
+  --item1Name: #16f;
+  --item2Name: #16f;
+  --item1Ratings: #16f;
+  --item2Ratings: #16f;
+  --item1URL: url("https://m.media-amazon.com/images/I/61go0qfA1iL._AC_SY879_.jpg");
+  --item2URL: url("https://m.media-amazon.com/images/I/61T7-sgbZOL._AC_SL1500_.jpg");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.gamepanel {
+  height: 100vh;
+
+  /* background-image: url("https://m.media-amazon.com/images/I/61go0qfA1iL._AC_SY879_.jpg"),
+    url("https://m.media-amazon.com/images/I/61T7-sgbZOL._AC_SL1500_.jpg"); */
+
+  background-image: var(--item1URL), var(--item2URL);
+
+  background-repeat: no-repeat, no-repeat;
+  background-size: 50% 100%;
+  background-position: left top, right top;
+}
+
+h1 {
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  font-size: 200px;
+}
+
+h2 {
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 62%;
+  width: 100%;
+  font-size: 40px;
+}
+
+.button1 {
+  border-radius: 30px;
+  border: none;
+  padding: 0rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  white-space: nowrap;
+  position: absolute;
+  top: 65%;
+  width: 200px;
+  right: 51%;
+}
+
+.button2 {
+  border-radius: 30px;
+  border: none;
+  padding: 0rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  white-space: nowrap;
+  position: absolute;
+  top: 65%;
+  width: 200px;
+  left: 51%;
+}
+
+.button--primary {
+  background: dodgerblue;
+  color: white;
+}
+
+.button--primary:hover {
+  background: rgb(9, 126, 243);
+}
