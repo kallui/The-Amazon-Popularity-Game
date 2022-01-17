@@ -8,18 +8,40 @@
     <title>Amazon</title>
     <meta name="author" content="SitePoint" />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <div class="gamepanel"></div>
+    <div class="container">
+      <div class="left">
+        <div class="container-inner">
+          <p class="itemName" id="itemNameLeft">Item Name: Banana phone</p>
+          <p class="rating" id="itemRatingLeft">Number of Ratings: </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="container-inner">
+          <p class="itemName" id="itemNameRight">Item Name: Banana phone</p>
+          <p class="rating" id="itemRatingRight">Number of Ratings: </p>
+        </div>
+      </div>
+    </div>
     <p></p>
     <h1>VS</h1>
-    <p id="demo">JavaScript can change HTML content.</p>
-    <h2 id="h2">Which item has higher popularity?</h2>
-    <button class="button1 button--primary">&#8592</button>
-    <button class="button2 button--primary">&#8594</button>
+    <h2>Which item has higher popularity?</h2>
 
-    <!-- <script src="js/index.js"></script> -->
+    <p class="itemName1">test</p>
+
+
+    
+    <button onclick="switchImage(true)" class="button1 button--primary">&#8592</button>
+    <button onclick="switchImage(false)" class="button2 button--primary">&#8594</button>
+
+
+    <script src="js/index.js"></script>
+
+    <script src="js/scripts.js"></script>
   </body>
 </html>

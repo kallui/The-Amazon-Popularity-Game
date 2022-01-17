@@ -1,8 +1,4 @@
 :root {
-  --item1Name: #16f;
-  --item2Name: #16f;
-  --item1Ratings: #16f;
-  --item2Ratings: #16f;
   --item1URL: url("https://m.media-amazon.com/images/I/61go0qfA1iL._AC_SY879_.jpg");
   --item2URL: url("https://m.media-amazon.com/images/I/61T7-sgbZOL._AC_SL1500_.jpg");
 }
@@ -22,6 +18,39 @@
   background-repeat: no-repeat, no-repeat;
   background-size: 50% 100%;
   background-position: left top, right top;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+}
+
+.left,
+.right {
+  font-size: 2rem;
+  border-radius: 30px;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: 100vh;
+  justify-content: center;
+  padding-bottom: 8vh;
+  box-sizing: border-box;
+}
+
+.rating {
+  border-radius: 10px;
+  padding: 0rem 1rem;
+  display: table;
+  background-color: rgb(19, 175, 202);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -46,6 +75,17 @@ h2 {
   font-size: 40px;
 }
 
+/* Item names */
+
+.itemName {
+  border-radius: 10px;
+  padding: 0rem 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  background-color: rgb(19, 175, 202);
+}
+
 .button1 {
   border-radius: 30px;
   border: none;
@@ -61,6 +101,7 @@ h2 {
   top: 65%;
   width: 200px;
   right: 51%;
+  z-index: 20;
 }
 
 .button2 {
@@ -78,13 +119,14 @@ h2 {
   top: 65%;
   width: 200px;
   left: 51%;
+  z-index: 20;
 }
 
 .button--primary {
-  background: dodgerblue;
+  background: rgb(4, 230, 162);
   color: white;
 }
 
 .button--primary:hover {
-  background: rgb(9, 126, 243);
+  background: rgb(5, 199, 141);
 }
