@@ -234,7 +234,7 @@ function compareTwoItems(clicked) {
 }
 
 
-// test
+// test 2
 
 function change(int) {
     if (int == 1) {
