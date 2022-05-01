@@ -2,18 +2,13 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Amazon</title>
-    <meta name="author" content="SitePoint" />
-
-    <!-- TODO: rename css stylesheet associated with this html file-->
     <link rel="stylesheet" href="gamepage.css" />
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
+    <title>The Amazon Popularity Game</title>
   </head>
 
   <body>
-    <div class="gamepanel"></div>
+    <header><span>Which item is more popular?</span></header>
     <div class="container">
       <div class="left">
         <div class="container-inner">
@@ -29,16 +24,14 @@
         </div>
       </div>
     </div>
-    <p></p>
-    <h1>VS</h1>
-    <h2>Which item is more popular?</h2>
+    <div class="center-text">
+      <h2>VS</h2>
+    </div>
 
-
-
-    
     <button onclick="compareTwoItems(1)" class="left-button button--primary">&#8592</button>
     <button onclick="compareTwoItems(2)" class="right-button button--primary">&#8594</button>
 
+    
 
     <script src="gamepage.js"></script>
 

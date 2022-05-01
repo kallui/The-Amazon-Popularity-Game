@@ -25,7 +25,6 @@ button {
     background-color: #04aa33;
     border: none;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
     padding: 15px 32px;
     border-radius: 30px;
@@ -35,7 +34,6 @@ button:hover {
     background-color: #007e24;
     border: none;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
     padding: 15px 32px;
     border-radius: 30px;
