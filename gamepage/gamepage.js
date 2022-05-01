@@ -232,12 +232,3 @@ function compareTwoItems(clicked) {
         .setProperty('--item1URL', '' + "url(" + itemArray[counter].url + ")");
     }
 }
-
-
-// test 2
-
-function change(int) {
-    if (int == 1) {
-
-    }
-}

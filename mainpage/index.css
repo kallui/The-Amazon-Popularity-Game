@@ -38,4 +38,5 @@ button:hover {
     font-size: 6vh;
     padding: 3vh;
     border-radius: 6vh;
+    cursor: pointer;
 }

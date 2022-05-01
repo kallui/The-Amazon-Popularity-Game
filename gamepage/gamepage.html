@@ -9,17 +9,18 @@
 
   <body>
     <header>Which item is more popular?</header>
-    <section class="left">
+      <div class="left">
+        <img src="https://m.media-amazon.com/images/I/61Vtv7hVkWL._AC_UX695_.jpg" onclick="compareTwoItems(1)"></img>
 
-    </section>
-      <h2>VS</h2>
+      </div>
+      <div class="right">
+        <img src="https://m.media-amazon.com/images/I/61T7-sgbZOL._AC_SL1500_.jpg" onclick="compareTwoItems(2)"></img>
 
-    <button onclick="compareTwoItems(1)" class="left-button button--primary">&#8592</button>
-    <button onclick="compareTwoItems(2)" class="right-button button--primary">&#8594</button>
+      </div>
+    <section class="central-text">VS</section>
 
-    
-
+    <!-- <button onclick="compareTwoItems(1)" class="left-button button--primary">&#8592</button>
+    <button onclick="compareTwoItems(2)" class="right-button button--primary">&#8594</button> -->
     <script src="gamepage.js"></script>
-
   </body>
 </html>
