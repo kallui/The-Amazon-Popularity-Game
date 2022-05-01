@@ -219,18 +219,24 @@ function compareTwoItems(clicked) {
     if (clicked == 1) {
         if (itemArray[currentLeft].numOfRatings > itemArray[currentRight].numOfRatings) {
             currentRight = Math.max(currentLeft, currentRight) + 1;
+            currentLeft = currentRight + 1;
             document.getElementById("right-image").src = itemArray[currentRight].url;
             document.getElementById("right-name").textContent = itemArray[currentRight].name;
+            document.getElementById("left-image").src = itemArray[currentLeft].url;
+            document.getElementById("left-name").textContent = itemArray[currentLeft].name;
         } else {
-            window.location.href = "https://google.com";
+            window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
         }
     } else {
         if (itemArray[currentRight].numOfRatings > itemArray[currentLeft].numOfRatings) {
             currentLeft = Math.max(currentLeft, currentRight) + 1;
+            currentRight= currentLeft + 1;
+            document.getElementById("right-image").src = itemArray[currentRight].url;
+            document.getElementById("right-name").textContent = itemArray[currentRight].name;
             document.getElementById("left-image").src = itemArray[currentLeft].url;
             document.getElementById("left-name").textContent = itemArray[currentLeft].name;
         } else {
-            window.location.href = "https://google.com";
+            window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
         }    
     }
 }
