@@ -212,7 +212,6 @@ url: 'https://m.media-amazon.com/images/I/61P+L6VO57L._AC_SL1500_.jpg'}
 
 
 // Returns true if "item1 > item2" OR "Item 1 is more popular than Item 2"
-let counter = 0
 let currentLeft = 0;
 let currentRight = 1;
 
@@ -221,6 +220,7 @@ function compareTwoItems(clicked) {
         if (itemArray[currentLeft].numOfRatings > itemArray[currentRight].numOfRatings) {
             currentRight = Math.max(currentLeft, currentRight) + 1;
             document.getElementById("right-image").src = itemArray[currentRight].url;
+            document.getElementById("right-name").textContent = itemArray[currentRight].name;
         } else {
             window.location.href = "https://google.com";
         }
@@ -228,6 +228,7 @@ function compareTwoItems(clicked) {
         if (itemArray[currentRight].numOfRatings > itemArray[currentLeft].numOfRatings) {
             currentLeft = Math.max(currentLeft, currentRight) + 1;
             document.getElementById("left-image").src = itemArray[currentLeft].url;
+            document.getElementById("left-name").textContent = itemArray[currentLeft].name;
         } else {
             window.location.href = "https://google.com";
         }    
