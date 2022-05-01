@@ -1,9 +1,3 @@
-let item = {
-    name: 'Banana Phone',
-    numOfRatings: 15,
-    url: "https://m.media-amazon.com/images/I/61T7-sgbZOL._AC_SL1500_.jpg"
-}
-
 const itemArray = []
 
 itemArray[0] = {name: 'Banana Phone',
@@ -217,18 +211,25 @@ url: 'https://m.media-amazon.com/images/I/61P+L6VO57L._AC_SL1500_.jpg'}
 
 
 
-//Returns true if "item1 > item2" OR "Item 1 is more popular than Item 2"
-let counter = 2
+// Returns true if "item1 > item2" OR "Item 1 is more popular than Item 2"
+let counter = 0
+let currentLeft = 0;
+let currentRight = 1;
 
-function compareTwoItems(clicked) {
-    
+function compareTwoItems(clicked) {   
     if (clicked == 1) {
-        counter = counter + 1
-        document.documentElement.style
-    .setProperty('--item2URL', "url(" + itemArray[counter].url + ")");
+        if (itemArray[currentLeft].numOfRatings > itemArray[currentRight].numOfRatings) {
+            currentRight = Math.max(currentLeft, currentRight) + 1;
+            document.getElementById("right-image").src = itemArray[currentRight].url;
+        } else {
+            window.location.href = "https://google.com";
+        }
     } else {
-        counter = counter + 1
-        document.documentElement.style
-        .setProperty('--item1URL', '' + "url(" + itemArray[counter].url + ")");
+        if (itemArray[currentRight].numOfRatings > itemArray[currentLeft].numOfRatings) {
+            currentLeft = Math.max(currentLeft, currentRight) + 1;
+            document.getElementById("left-image").src = itemArray[currentLeft].url;
+        } else {
+            window.location.href = "https://google.com";
+        }    
     }
 }

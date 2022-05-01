@@ -12,8 +12,14 @@ body {
 }
 
 h1 {
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    position: relative;
+    width: 80vw;
+    left: 50%;
+    transform: translate(-50%, 0);
     color: white;
     font-size: 13vh;
+    padding: 1%;
 }
 
 h2 {
