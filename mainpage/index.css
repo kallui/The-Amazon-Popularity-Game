@@ -13,11 +13,12 @@ body {
 
 h1 {
     color: white;
-    font-size: 75px;
+    font-size: 13vh;
 }
 
 h2 {
     color: white;
+    font-size: 4vh;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
 
@@ -25,16 +26,16 @@ button {
     background-color: #04aa33;
     border: none;
     color: white;
-    font-size: 30px;
-    padding: 15px 32px;
-    border-radius: 30px;
+    font-size: 6vh;
+    padding: 3vh;
+    border-radius: 6vh;
 }
 
 button:hover {
     background-color: #007e24;
     border: none;
     color: white;
-    font-size: 30px;
-    padding: 15px 32px;
-    border-radius: 30px;
+    font-size: 6vh;
+    padding: 3vh;
+    border-radius: 6vh;
 }
