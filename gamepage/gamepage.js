@@ -209,15 +209,8 @@ numOfRatings: 256470,
 url: 'https://m.media-amazon.com/images/I/61P+L6VO57L._AC_SL1500_.jpg'}
 
 
-
-
-// Returns true if "item1 > item2" OR "Item 1 is more popular than Item 2"
 let currentLeft = 0;
 let currentRight = 1;
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function compareTwoItems(clicked) { 
     document.getElementById('left-ratings').style.display = "block";
@@ -227,14 +220,7 @@ function compareTwoItems(clicked) {
             if (itemArray[currentLeft].numOfRatings > itemArray[currentRight].numOfRatings) {
                 currentRight = Math.max(currentLeft, currentRight) + 1;
                 currentLeft = currentRight + 1;
-                document.getElementById("right-image").src = itemArray[currentRight].url;
-                document.getElementById("right-name").textContent = itemArray[currentRight].name;
-                document.getElementById("left-image").src = itemArray[currentLeft].url;
-                document.getElementById("left-name").textContent = itemArray[currentLeft].name;
-                document.getElementById("left-ratings").textContent = itemArray[currentLeft].numOfRatings + " ratings";
-                document.getElementById("right-ratings").textContent = itemArray[currentRight].numOfRatings + " ratings";
-                document.getElementById('left-ratings').style.display = "none";
-                document.getElementById('right-ratings').style.display = "none";                
+                updateItems();
             } else {
                 window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
             }
@@ -242,17 +228,21 @@ function compareTwoItems(clicked) {
             if (itemArray[currentRight].numOfRatings > itemArray[currentLeft].numOfRatings) {
                 currentLeft = Math.max(currentLeft, currentRight) + 1;
                 currentRight= currentLeft + 1;
-                document.getElementById("right-image").src = itemArray[currentRight].url;
-                document.getElementById("right-name").textContent = itemArray[currentRight].name;
-                document.getElementById("left-image").src = itemArray[currentLeft].url;
-                document.getElementById("left-name").textContent = itemArray[currentLeft].name;
-                document.getElementById("left-ratings").textContent = itemArray[currentLeft].numOfRatings + " ratings";
-                document.getElementById("right-ratings").textContent = itemArray[currentRight].numOfRatings + " ratings";
-                document.getElementById('left-ratings').style.display = "none";
-                document.getElementById('right-ratings').style.display = "none";                
+                updateItems();
             } else {
                 window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
             }    
         }
     }, 2000);
+}
+
+function updateItems() {
+    document.getElementById("left-image").src = itemArray[currentLeft].url;
+    document.getElementById("right-image").src = itemArray[currentRight].url;
+    document.getElementById("left-name").textContent = itemArray[currentLeft].name;
+    document.getElementById("right-name").textContent = itemArray[currentRight].name;
+    document.getElementById("left-ratings").textContent = itemArray[currentLeft].numOfRatings + " ratings";
+    document.getElementById("right-ratings").textContent = itemArray[currentRight].numOfRatings + " ratings";
+    document.getElementById('left-ratings').style.display = "none";
+    document.getElementById('right-ratings').style.display = "none";                
 }
