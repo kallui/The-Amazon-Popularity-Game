@@ -214,29 +214,39 @@ let currentRight = 1;
 
 function compareTwoItems(clicked) { 
     document.getElementById('left-ratings').style.display = "block";
-    document.getElementById('right-ratings').style.display = "block";    
-    setTimeout(function() {
-        if (clicked == 1) {
-            if (itemArray[currentLeft].numOfRatings > itemArray[currentRight].numOfRatings) {
-                currentRight = Math.max(currentLeft, currentRight) + 1;
-                currentLeft = currentRight + 1;
-                updateItems();
-            } else {
-                window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-            }
+    document.getElementById('right-ratings').style.display = "block";
+    if (clicked == 1) {
+        if (itemArray[currentLeft].numOfRatings > itemArray[currentRight].numOfRatings) {
+            currentRight = Math.max(currentLeft, currentRight) + 1;
+            currentLeft = currentRight + 1;
+            showCentralSymbol(1);
+            setTimeout(function() {
+                refreshPage();
+            },2000);
         } else {
-            if (itemArray[currentRight].numOfRatings > itemArray[currentLeft].numOfRatings) {
-                currentLeft = Math.max(currentLeft, currentRight) + 1;
-                currentRight= currentLeft + 1;
-                updateItems();
-            } else {
+            showCentralSymbol(0);
+            setTimeout(function() {
                 window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-            }    
+            },2000);
         }
-    }, 2000);
+    } else {
+        if (itemArray[currentRight].numOfRatings > itemArray[currentLeft].numOfRatings) {
+            currentLeft = Math.max(currentLeft, currentRight) + 1;
+            currentRight= currentLeft + 1;
+            showCentralSymbol(1);
+            setTimeout(function() {
+                refreshPage();
+            },2000);
+        } else {
+            showCentralSymbol(0);
+            setTimeout(function() {
+                window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+            },2000);
+        }    
+    }    
 }
 
-function updateItems() {
+function refreshPage() {
     document.getElementById("left-image").src = itemArray[currentLeft].url;
     document.getElementById("right-image").src = itemArray[currentRight].url;
     document.getElementById("left-name").textContent = itemArray[currentLeft].name;
@@ -244,5 +254,19 @@ function updateItems() {
     document.getElementById("left-ratings").textContent = itemArray[currentLeft].numOfRatings + " ratings";
     document.getElementById("right-ratings").textContent = itemArray[currentRight].numOfRatings + " ratings";
     document.getElementById('left-ratings').style.display = "none";
-    document.getElementById('right-ratings').style.display = "none";                
+    document.getElementById('right-ratings').style.display = "none"; 
+    document.getElementById('central-text').style.display = "block"; 
+    document.getElementById('green-tick').style.display = "none"; 
+    document.getElementById('red-tick').style.display = "none"; 
+}
+
+function showCentralSymbol(correct) {
+    setTimeout(function() {
+        document.getElementById('central-text').style.display = "none";
+        if (correct == 1) {
+            document.getElementById('green-tick').style.display = "block";
+        } else {
+            document.getElementById('red-cross').style.display = "block";
+        }
+    }, 1000);
 }
